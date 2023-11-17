@@ -25,8 +25,12 @@ Feature: Registeration
     Then User will be redirected to the Register page
 
   @ValidationData
-  Scenario: Registration Process
-    Given User enters the name "Nimra" in username field and the designation "Dev" and Location "Canada"
+  Scenario Outline: Registration Process
+    Given User enters the name <name> in username field and the designation <des> and Location <loc>
     When User clicks on the Submit button 
     Then User will be landed on the Dashboard
-
+    
+   Examples: 
+   |name|des|loc|
+   |nimra|QA|Canada|
+   |Abdullah|ACCA|Toronto
